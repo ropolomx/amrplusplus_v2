@@ -66,7 +66,7 @@ def kraken2_load_analytic_data(file_name_list):
     return_values = {}
     unclassifieds = {}  # { sample: [unclassified, total, percent] }
     for file in file_name_list:
-        sample_id = file.split('/')[-1].replace('.kraken.report', '')
+        sample_id = file.split('/')[-1].replace('_kraken.report', '')
         unclassifieds.setdefault(sample_id, [0, 0, 0])
         with open(file, 'r') as f:
             data = f.read().split('\n')
